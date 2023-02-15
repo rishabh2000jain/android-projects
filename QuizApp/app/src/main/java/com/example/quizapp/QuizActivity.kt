@@ -1,5 +1,6 @@
 package com.example.quizapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -57,7 +58,7 @@ class QuizActivity : AppCompatActivity() {
                     }
                 }
                 ButtonState.Finish -> {
-                        // TODO:navigate to final screen
+                    startResultActivity()
                 }
                 ButtonState.NextQuestion -> {
                     viewModel.getNextQuestion()
@@ -71,28 +72,29 @@ class QuizActivity : AppCompatActivity() {
 
     private fun handleOptionSelect(){
         binding.option1.setOnClickListener {
-            selectedOption=1
             resetOptions()
+            selectedOption=1
             binding.option1.setStrokeColorResource(R.color.purple_500)
         }
         binding.option2.setOnClickListener {
-            selectedOption=2
             resetOptions()
+            selectedOption=2
             binding.option2.setStrokeColorResource(R.color.purple_500)
         }
         binding.option3.setOnClickListener {
-            selectedOption=3
             resetOptions()
+            selectedOption=3
             binding.option3.setStrokeColorResource(R.color.purple_500)
         }
         binding.option4.setOnClickListener {
-            selectedOption=4
             resetOptions()
+            selectedOption=4
             binding.option4.setStrokeColorResource(R.color.purple_500)
         }
     }
 
     private fun resetOptions(){
+        selectedOption=null
         binding.option1.setStrokeColorResource(android.R.color.darker_gray)
         binding.option2.setStrokeColorResource(android.R.color.darker_gray)
         binding.option3.setStrokeColorResource(android.R.color.darker_gray)
@@ -162,6 +164,15 @@ class QuizActivity : AppCompatActivity() {
         binding.option2.isEnabled=enabled
         binding.option3.isEnabled=enabled
         binding.option4.isEnabled=enabled
+    }
+
+    private fun startResultActivity(){
+        val intent:Intent = Intent(this,ResultActivity::class.java)
+        intent.putExtra("userName",this.intent.extras?.getString("userName"))
+        intent.putExtra("totalQuestions",viewModel.getTotalQuestions())
+        intent.putExtra("correctAnswers",viewModel.getQuestionsProgress().value)
+        startActivity(intent)
+        finish()
     }
 
 }

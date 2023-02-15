@@ -21,15 +21,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/custom_font"
-            android:text="Quiz App!"
             android:textColor="@color/black"
             android:textFontWeight="900"
-            android:textSize="20sp" />
+            android:textAlignment="center"
+            android:textSize="28sp" />
         <ImageView
             android:id="@+id/flagImg"
             android:layout_marginVertical="20dp"
-            android:layout_width="200dp"
-            android:layout_height="120dp"
+            android:layout_width="240dp"
+            android:layout_height="170dp"
             android:fontFamily="@font/custom_font"
             android:textColor="@color/black"
             android:textFontWeight="900"
@@ -54,7 +54,6 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/custom_font"
                 android:textColor="@color/black"
-                android:text="1/10"
                 android:layout_marginStart="5dp"
                 android:textFontWeight="900"
                 android:textSize="11sp" />

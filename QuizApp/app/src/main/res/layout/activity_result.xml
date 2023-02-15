@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_bg"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="24dp"
+    tools:context=".ResultActivity">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/custom_font"
+        android:textColor="@color/white"
+        android:text="Results"
+        android:textFontWeight="900"
+        android:textAlignment="center"
+        android:textSize="28sp" />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_trophy"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/custom_font"
+        android:textColor="@color/white"
+        android:text="Hey Congrats!"
+        android:textFontWeight="700"
+        android:textAlignment="center"
+        android:layout_marginTop="30dp"
+        android:textSize="24sp" />
+    <TextView
+        android:id="@+id/userNameTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/custom_font"
+        android:textColor="@color/white"
+        android:textFontWeight="900"
+        android:textAlignment="center"
+        android:layout_marginTop="30dp"
+        android:textSize="20sp" />
+    <TextView
+        android:id="@+id/scoreDetailTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/custom_font"
+        android:textColor="@android:color/darker_gray"
+        android:textFontWeight="500"
+        android:text="Your score is @correctAnswers out of @totalQuestions"
+        android:textAlignment="center"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/finishBtn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/purple_500"
+        android:text="Finish"
+        android:textFontWeight="500"
+        android:fontFamily="@font/custom_font"
+        />
+</LinearLayout>
